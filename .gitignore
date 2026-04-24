@@ -1,0 +1,10 @@
+# 敏感資料
+*.env
+*.key
+*secret*
+*credential*
+
+# 系統檔
+.DS_Store
+Thumbs.db
+desktop.ini

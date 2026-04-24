@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "plugins": {
+    "superpowers@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "D:\\Company\\Users\\edward.yg.APEXGRP\\.claude\\plugins\\cache\\claude-plugins-official\\superpowers\\5.0.7",
+        "version": "5.0.7",
+        "installedAt": "2026-04-22T07:07:03.841Z",
+        "lastUpdated": "2026-04-22T07:07:03.841Z",
+        "gitCommitSha": "b55764852ac78870e65c6565fb585b6cd8b3c5c9"
+      }
+    ]
+  }
+}
