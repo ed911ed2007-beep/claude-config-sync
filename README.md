@@ -2,6 +2,9 @@
 
 兩台電腦（公司 / 筆電）的 Claude Code 設定同步 repo。
 
+## Related
+- [SYNC_CHECKLIST.md](SYNC_CHECKLIST.md) — sync before touching company / laptop configs
+
 ## 目錄結構
 
 ```
