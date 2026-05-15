@@ -1,0 +1,35 @@
+{
+  "_comment": "Windows 本機設定範本。使用時複製為 settings.local.json 並調整路徑。",
+  "env": {
+    "CLAUDE_CODE_USE_POWERSHELL_TOOL": "1",
+    "CLAUDE_WORKLOG_PATH": "D:\\Company\\Users\\edward.yg.APEXGRP\\Claude-workspace\\daily-log\\_session-ends.log"
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "Add-Content -Path $env:CLAUDE_WORKLOG_PATH -Value (\"[\" + (Get-Date -Format 'yyyy-MM-dd HH:mm') + \"] Session active\")",
+            "shell": "powershell",
+            "statusMessage": "記錄工作時間..."
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "rtk hook claude"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": []
+  }
+}

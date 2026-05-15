@@ -1,0 +1,12 @@
+# 機密與認證
+.credentials.json
+settings.local.json
+
+# Claude Code 運行時產生的暫存檔
+*.jsonl
+file-history/
+paste-cache/
+telemetry/
+plugins/cache/
+sessions/
+shell-snapshots/

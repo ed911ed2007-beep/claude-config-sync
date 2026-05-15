@@ -1,0 +1,34 @@
+{
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "ENABLE_PROMPT_CACHING_1H": "1"
+  },
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "在結束回應前，請自我檢查以下 5 個品質關卡，若有問題請立刻修正後再結束：\n\n1. **Encoding 安全**：我修改的 Python 檔案，所有 open() 呼叫是否都指定了 encoding='utf-8'？（防止 cp950 問題）\n2. **API Key 安全**：我有沒有在程式碼、日誌、輸出中印出或寫死任何 API key / token / password？\n3. **敏感檔案**：settings.json、.env 等敏感檔案是否在 .gitignore 中？我有沒有不小心建議 commit 它們？\n4. **靜默失敗**：我寫的程式碼，錯誤發生時是否會明確報錯，還是靜默跳過？\n5. **任務完整性**：使用者要求的事情我是否都完成了？有沒有遺漏的步驟？\n\n若以上全部 OK，回覆「✅ 品質確認通過」後再結束。"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "context 即將壓縮。請立即執行：\n1. 把本 session 尚未存入 memory 的重要決策、進度、待辦，寫入 memory/ 對應的 .md 檔案（或新建）\n2. 更新 MEMORY.md 索引\n3. 完成後回覆「✅ PreCompact 記憶已更新」"
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true
+  },
+  "autoUpdatesChannel": "latest",
+  "theme": "dark-daltonized",
+  "remoteControlAtStartup": true
+}
