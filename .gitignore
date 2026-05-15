@@ -1,6 +1,10 @@
 # 機密與認證
 .credentials.json
 settings.local.json
+*.env
+*.key
+*secret*
+*credential*
 
 # Claude Code 運行時產生的暫存檔
 *.jsonl
@@ -10,3 +14,8 @@ telemetry/
 plugins/cache/
 sessions/
 shell-snapshots/
+
+# 系統檔
+.DS_Store
+Thumbs.db
+desktop.ini

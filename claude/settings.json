@@ -1,0 +1,31 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "Add-Content -Path 'D:\\Company\\Users\\edward.yg.APEXGRP\\Claude-workspace\\daily-log\\_session-ends.log' -Value (\"[\" + (Get-Date -Format 'yyyy-MM-dd HH:mm') + \"] Session active\")",
+            "shell": "powershell",
+            "statusMessage": "記錄工作時間..."
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "rtk hook claude"
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true
+  },
+  "autoUpdatesChannel": "latest"
+}
