@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "BPM Manual Generator"
+  short_description: "Build UTF-8 safe BPM manual slides and backups."
+  default_prompt: "Use $bpm-form-manual to generate/update the BPM manuals, verify Traditional Chinese UTF-8 output, and create a dated backup."
